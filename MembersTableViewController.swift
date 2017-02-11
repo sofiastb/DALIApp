@@ -13,6 +13,7 @@ import FirebaseDatabase
 class MembersTableViewController: UITableViewController {
     
     // MARK: Properties
+    // An array of member objects that correspond to DALI's members
     var members: [Member] = []
 
     override func viewDidLoad() {
@@ -57,7 +58,7 @@ class MembersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Sets the 
+        // Sets the cell that is accessed
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MemberTableViewCell else {
             fatalError("The dequeued cell is not of type MemberTableViewCell")
         }
@@ -117,13 +118,18 @@ class MembersTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Takes the member item 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "MemberDetails" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                var member = members[indexPath.row]
+                let controller = segue.destination as? MemberDescriptionViewController
+                controller?.chosenMember = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
+            }
+        }
+
     }
-    */
+    
 }

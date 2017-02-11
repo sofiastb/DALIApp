@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MemberDescriptionViewController: UIViewController {
     
@@ -15,18 +16,46 @@ class MemberDescriptionViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var projects: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var location: UIButton!
     
-    
-    // Variables for the data passed from the table view
-    var iconImage: UIImage!
-    var nameString: String!
-    var messageString: String!
-    var projectsArray: [String] = []
+    // Variable for the Member object passed from the table view
+    var chosenMember: Member?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Sets title of view controller as the member's name
+        self.title = chosenMember?.name
+        // Makes buttons' corners round
+        urlButton.layer.cornerRadius = 10
+        location.layer.cornerRadius = 10
+        
+        // Turns url string into useable link
+        let url = URL(string: (chosenMember?.iconUrl)!)
+        
+        // Implemented Task to guarantee that the icon urls wouldn't be nil.
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                self.icon.image = UIImage(data: data)
+            }
+        }
+        
+        task.resume()
+        
+        // Sets the various aspects of the DetailViewController
+        self.name.text = "Hi! I'm " + (self.chosenMember?.name)! + "."
+        self.message.text = self.chosenMember?.message
+        self.projects.text = (self.chosenMember?.project)!.joined(separator: ", ")
+        
+    }
+    
+    // Makes profile images round
+    override func viewDidLayoutSubviews() {
+        icon.layer.cornerRadius = icon.frame.size.width/2
+        icon.clipsToBounds = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +64,17 @@ class MemberDescriptionViewController: UIViewController {
     }
     
 
+    @IBAction func loadWebsite(_ sender: Any) {
+        
+        // Turns the website string into a URL
+        let website = URL(string: (chosenMember?.url)!)
+        
+        // Instantiates a SafariViewController to display the website.
+        let safariViewController = SFSafariViewController(url: website!)
+        self.present(safariViewController, animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
