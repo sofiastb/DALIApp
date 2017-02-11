@@ -50,7 +50,7 @@
                                 <connections>
                                     <outlet property="icon" destination="GmT-2a-6BD" id="C06-RI-H4c"/>
                                     <outlet property="nameLabel" destination="yyw-ES-KKL" id="ovH-wB-dej"/>
-                                    <segue destination="6qJ-zb-MeT" kind="show" id="fuZ-iy-opA"/>
+                                    <segue destination="6qJ-zb-MeT" kind="show" identifier="MemberDetails" id="fuZ-iy-opA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,6 +157,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SXW-ib-9Cf"/>
+                    <connections>
+                        <outlet property="icon" destination="HWi-LW-8yx" id="4hI-of-KdH"/>
+                        <outlet property="message" destination="krj-sd-mDI" id="nRs-v0-NLD"/>
+                        <outlet property="name" destination="Tnv-V6-xPI" id="pTi-Tf-Gxo"/>
+                        <outlet property="projects" destination="amc-PR-WBi" id="Wjl-f2-fW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJR-kI-j9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

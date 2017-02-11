@@ -57,6 +57,7 @@ class MembersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Sets the 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MemberTableViewCell else {
             fatalError("The dequeued cell is not of type MemberTableViewCell")
         }
@@ -68,7 +69,6 @@ class MembersTableViewController: UITableViewController {
         // Implemented Task to guarantee that the icon urls wouldn't be nil.
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(cell.icon)
             DispatchQueue.main.async() {
                 cell.icon.image = UIImage(data: data)
             } 
@@ -126,5 +126,4 @@ class MembersTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

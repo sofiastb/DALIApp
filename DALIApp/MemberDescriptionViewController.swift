@@ -9,7 +9,20 @@
 import UIKit
 
 class MemberDescriptionViewController: UIViewController {
-
+    
+    // Outlets for the different parts of the view controller
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var projects: UILabel!
+    
+    
+    // Variables for the data passed from the table view
+    var iconImage: UIImage!
+    var nameString: String!
+    var messageString: String!
+    var projectsArray: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
