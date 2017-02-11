@@ -1,0 +1,346 @@
+[
+{
+  "name": "Erica",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Erica.png",
+  "url": "//assets.rbl.ms/365027/980x.jpg",
+  "message": "Swimming with whales in my dreams",
+  "lat_long": [14.827991, -131.484375],
+  "project": ["Staff"]
+},
+{
+  "name": "Steven",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/stevoDALI.jpg",
+  "url": "//www.dartmouth.edu/~stevenchun/",
+  "message": "My greatest pain in life is that I will never be able to see myself perform live.",
+  "lat_long": [41.839787, -87.953553],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "Froggy",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/froggy.jpg",
+  "url": "//giphy.com/embed/QCpqmkDHVNde",
+  "message": "Come visit me in Costa Rica!",
+  "lat_long": [9.6660971,-85.0621176],
+  "project": []
+},
+{
+  "name": "Aditi",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/aditi.jpg",
+  "url": "//www.aditiphatak.me",
+  "message": "In the Heart of India!",
+  "lat_long": [22.719569,75.857726],
+  "project": ["BASIIC"]
+},
+{
+  "name": "Bella",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/bella.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/bella17wmappy.pdf",
+  "message": "If I could choose Id be everywhere",
+  "lat_long": [40.542504,-29.597168],
+  "project": ["Changing Perspectives"]
+},
+{
+  "name": "Ben",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/ben.jpg",
+  "url": "//benjaminkcooper.github.io/",
+  "message": "Gotta love the birthplace of the American Revolution!",
+  "lat_long": [42.443037,-71.228964],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "Omkar",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/omkar.jpg",
+  "url": "//os0520.me/",
+  "message": "Smelling mushrooms in Delaware!",
+  "lat_long": [39.715668, -75.640762],
+  "project": []
+},
+{
+  "name": "Tim",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/tim_round.jpg",
+  "url": "//www.zingweb.com",
+  "message": "Hiking in the High Sierras!",
+  "lat_long": [37.2320967,-118.8578716],
+  "project": ["Staff"]
+},
+{
+  "name": "Josh",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Josh_Davis_portrait (200x200).jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/Josh_Davis_mappy_page.pdf",
+  "message": "Feed me tacos and tell me Im pretty!",
+  "lat_long": [30.333265,-95.357994],
+  "project": ["PsychVR"]
+},
+{
+  "name": "Kate",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/kate.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/kate-page.pdf",
+  "message": "I love snow!",
+  "lat_long": [44.227173,-71.747907],
+  "project": ["Staff"]
+},
+{
+  "name": "Theo",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Theo.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/TheoSite.pdf",
+  "message": "I like poptarts!",
+  "lat_long": [42.373616,-71.109734],
+  "project": ["Staff"]
+},
+{
+  "name": "Lillian",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/lillian.jpg",
+  "url": "//www.zhaolillian.com/about-me-dali",
+  "message": "MIA in Argentina",
+  "lat_long": [40.6084, -75.4902],
+  "project": []
+},
+{
+  "name": "Luisa",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/luisa.jpg",
+  "url": "//vluisa.github.io/mapWebsite/",
+  "message": "I was born here!",
+  "lat_long": [4.444676,-75.242438],
+  "project": ["NeuroViz", "Core"]
+},
+{
+  "name": "Pat",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/pat.jpg",
+  "url": "//www.patrickxu.com",
+  "message": "Exploring Yellowstone!",
+  "lat_long": [44.797716, -110.434368],
+  "project": ["Core"]
+},
+{
+  "name": "Kyle",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/kyle.jpg",
+  "url": "//kyledotterrer.me",
+  "message": "Building a Fire!",
+  "lat_long": [44.763057,-85.620632],
+  "project": ["Pulse"]
+},
+{
+  "name": "Nitasha",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Nitasha.jpg",
+  "url": "//nitashakochar.github.io/nitashakochar.me/",
+  "message": "Anybody wanna watch Sherlock?",
+  "lat_long": [40.792044,-73.539848],
+  "project": ["Life You Can Lead"]
+},
+{
+  "name": "Jessie",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/jessie.JPG",
+  "url": "//jessieanderson.me",
+  "message": "expelliarmus",
+  "lat_long": [41.478049, -81.357181],
+  "project": ["Pulse"]
+},
+{
+  "name": "Will",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/will.jpg",
+  "url": "//www.wjkaufman.com",
+  "message": "Favorite ski spot",
+  "lat_long": [37.938491, -107.810185],
+  "project": ["Seabird Apps"]
+},
+{
+  "name": "Ijemma",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/ijemma.jpg",
+  "url": "//ijemmao.github.io/ijemmao.me",
+  "message": "Drinking some boba tea",
+  "lat_long": [37.9492282, -121.735452],
+  "project": ["Seabird Apps"]
+},
+{
+  "name": "Danah",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/danah.jpg",
+  "url": "//danah23.github.io/danahhan.me",
+  "message": "Patiently waiting for the return of GOT",
+  "lat_long": [40.804821, -73.336230],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "Nisha",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Nisha.jpg",
+  "url": "//nishakumarigr.github.io/nishakumari.me",
+  "message": "Splashing colors!",
+  "lat_long": [20.5937, 78.9629],
+  "project": ["Protein Structure Builder"]
+},
+{
+  "name": "Carter",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/carter_headshot.jpg",
+  "url": "//planetcarter.me",
+  "message": "Here comes dat boi!",
+  "lat_long": [47.658780,-117.426047],
+  "project": ["BASIIC"]
+},
+{
+  "name": "Annie",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/annie.jpg",
+  "url": "//annieke.me",
+  "message": "Let me crash here for the moment",
+  "lat_long": [37.338208,-121.886329],
+  "project": ["Protein Structure Builder"]
+},
+{
+  "name": "Adam",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/adam.jpg",
+  "url": "//arinehouse.me",
+  "message": "Born in the heart of Pennsyltucky",
+  "lat_long": [41.311206, -75.963614],
+  "project": ["Protein Structure Builder"]
+},
+{
+  "name": "Jasper",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/headshot.png",
+  "url": "//jbing.me/jbing.me",
+  "message": "Riding the second avenue subway",
+  "lat_long": [40.712784,-74.005941],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "Sia",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/siapeng.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/SIA PENG.pdf",
+  "message": "Learning to chill in chilly winter",
+  "lat_long": [28.2282,112.9388],
+  "project": ["PsychVR"]
+},
+{
+  "name": "Anne",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/Anne_mappysquarephoto.jpeg",
+  "url": "//mappy.dali.dartmouth.edu/images/Anne_mappy.pdf",
+  "message": "binge watching Stranger Things, brb",
+  "lat_long": [43.208137,-71.537572],
+  "project": ["Protein Structure Builder"]
+},
+{
+  "name": "Ellis",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/ellisguo.jpg",
+  "url": "//eg17mappy.me",
+  "message": "It isn't work if nobody makes you do it",
+  "lat_long": [35.689487,139.691706],
+  "project": ["Clearpay"]
+},
+{
+  "name": "Amy",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/amy.JPG",
+  "url": "//mappy.dali.dartmouth.edu/images/amy_page.pdf",
+  "message": "blankety blank",
+  "lat_long": [40.432914,-74.663464],
+  "project": ["Core"]
+},
+{
+  "name": "Alexis",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/alexis.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/alexispage.pdf",
+  "message": "rollin",
+  "lat_long": [34.420831, -119.69819],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "Abby",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/abby.jpg",
+  "url": "//astarr.me",
+  "message": "Ice Fishing Paradise!",
+  "lat_long": [44.121081, -70.522895],
+  "project": ["Life You Can Lead"]
+},
+{
+  "name": "Sidney",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/sidney.png",
+  "url": "//sidthesquid.surge.sh",
+  "message": "Vim or I :qa!",
+  "lat_long": [40.7557, -73.5876],
+  "project": ["Core"]
+},
+{
+  "name": "Alex",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/alex.jpg",
+  "url": "//alexchanis.me",
+  "message": "I dont think anyone has screwed this up yet. Maybe Ill be the first",
+  "lat_long": [35.960638,-83.920739],
+  "project": ["Changing Perspectives"]
+},
+{
+  "name": "Jane",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/jane.jpg",
+  "url": "//jjanelee.me",
+  "message": "Washingtonian at Heart",
+  "lat_long": [47.6101, -122.2015],
+  "project": ["BASIIC"]
+},
+{
+  "name": "Jenny",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/jenny.jpg",
+  "url": "//jennybobenny.tumblr.com/hello",
+  "message": "Heroes Never Die! 0:-)",
+  "lat_long": [37.492701, 127.055297],
+  "project": ["Core", "NeuroViz"]
+},
+{
+  "name": "Danielle",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/danielle.jpg",
+  "url": "//daniellemidulla.me",
+  "message": "Start spreading the news, I'm leaving today.",
+  "lat_long": [40.770968, -73.948921],
+  "project": ["Changing Perspectives"]
+},
+{
+  "name": "Regina",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/yeginaran.jpg",
+  "url": "//reginayan.me/about.pdf",
+  "message": "just doin good to be here",
+  "lat_long": [38.982228,-94.670792],
+  "project": ["NeuroViz"]
+},
+{
+  "name": "John",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/john.jpg",
+  "url": "//www.johnkotz.us",
+  "message": "Dartmouth, born and raised",
+  "lat_long": [43.790618, -72.194191],
+  "project": ["Life You Can Lead"]
+},
+{
+  "name": "Jason",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/jason.jpg",
+  "url": "//www.jasonfeng.com",
+  "message": "this was really hard to make",
+  "lat_long": [31.2304, 121.4737],
+  "project": ["Core"]
+},
+{
+  "name": "Emma",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/emmao.jpg",
+  "url": "//emmaoberstein.github.io",
+  "message": "I was born in Miami",
+  "lat_long": [25.76,-80.19],
+  "project": ["Protein Structure Builder"]
+},
+{
+  "name": "Virginia",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/virginia.jpg",
+  "url": "//virginiacook.github.io",
+  "message": "This is my favorite place to watch the sunset!",
+  "lat_long": [41.2599,-72.0164],
+  "project": ["Clearpay"]
+},
+{
+  "name": "Tyler",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/tyler.jpg",
+  "url": "//burnamtech.com",
+  "message": "let's talk",
+  "lat_long": [47.608013, -122.335167],
+  "project": ["Grafficity"]
+},
+{
+  "name": "Emma",
+  "iconUrl": "//mappy.dali.dartmouth.edu/images/emma.jpg",
+  "url": "//mappy.dali.dartmouth.edu/images/emma intro.pdf",
+  "message": "I love bagels",
+  "lat_long": [42.611202,-71.574515],
+  "project": ["Seabird Apps"]
+}
+]

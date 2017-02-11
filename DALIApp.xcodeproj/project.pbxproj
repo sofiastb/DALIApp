@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A666220D9D97D1B9624D3E54 /* Pods_DALIApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE01C2262AC73BF43BB4C661 /* Pods_DALIApp.framework */; };
+		C33A56731E4E821200C3695D /* members.json in Resources */ = {isa = PBXBuildFile; fileRef = C33A56721E4E821200C3695D /* members.json */; };
 		C3B619611E4D92E20039EC47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619601E4D92E20039EC47 /* AppDelegate.swift */; };
 		C3B619661E4D92E20039EC47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3B619641E4D92E20039EC47 /* Main.storyboard */; };
 		C3B619691E4D92E20039EC47 /* DALIApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3B619671E4D92E20039EC47 /* DALIApp.xcdatamodeld */; };
@@ -17,13 +18,15 @@
 		C3B6197A1E4D950D0039EC47 /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */; };
 		C3B6197D1E4D99EE0039EC47 /* Expressive Inks.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3B6197C1E4D99470039EC47 /* Expressive Inks.ttf */; };
 		C3B619811E4E24EC0039EC47 /* MemberDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */; };
-		C3B619831E4E25390039EC47 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619821E4E25390039EC47 /* Member.swift */; };
 		C3B619851E4E3CF90039EC47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */; };
+		C3C4D6701E4EBC3700FEFD92 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C4D66F1E4EBC3700FEFD92 /* Member.swift */; };
+		C3E23BDB1E4E47FB0079C80C /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E23BDA1E4E47FB0079C80C /* MemberTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1622FA02DC78D0A69C588444 /* Pods-DALIApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DALIApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DALIApp/Pods-DALIApp.release.xcconfig"; sourceTree = "<group>"; };
 		1A7CA7F77D145852F198B263 /* Pods-DALIApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DALIApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DALIApp/Pods-DALIApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C33A56721E4E821200C3695D /* members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = members.json; sourceTree = "<group>"; };
 		C3B6195D1E4D92E20039EC47 /* DALIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DALIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B619601E4D92E20039EC47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3B619651E4D92E20039EC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,8 +38,9 @@
 		C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MembersTableViewController.swift; path = ../MembersTableViewController.swift; sourceTree = "<group>"; };
 		C3B6197C1E4D99470039EC47 /* Expressive Inks.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Expressive Inks.ttf"; sourceTree = "<group>"; };
 		C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberDescriptionViewController.swift; sourceTree = "<group>"; };
-		C3B619821E4E25390039EC47 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3C4D66F1E4EBC3700FEFD92 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		C3E23BDA1E4E47FB0079C80C /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		FE01C2262AC73BF43BB4C661 /* Pods_DALIApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DALIApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,12 +96,14 @@
 			children = (
 				C3B6197B1E4D99390039EC47 /* Fonts */,
 				C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */,
+				C3C4D66F1E4EBC3700FEFD92 /* Member.swift */,
 				C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */,
-				C3B619821E4E25390039EC47 /* Member.swift */,
+				C3E23BDA1E4E47FB0079C80C /* MemberTableViewCell.swift */,
 				C3B619601E4D92E20039EC47 /* AppDelegate.swift */,
 				C3B6196A1E4D92E20039EC47 /* Assets.xcassets */,
 				C3B619641E4D92E20039EC47 /* Main.storyboard */,
 				C3B6196C1E4D92E20039EC47 /* LaunchScreen.storyboard */,
+				C33A56721E4E821200C3695D /* members.json */,
 				C3B619751E4D93100039EC47 /* dali.jpg */,
 				C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */,
 				C3B6196F1E4D92E20039EC47 /* Info.plist */,
@@ -180,6 +186,7 @@
 				C3B6197D1E4D99EE0039EC47 /* Expressive Inks.ttf in Resources */,
 				C3B6196E1E4D92E20039EC47 /* LaunchScreen.storyboard in Resources */,
 				C3B619761E4D93100039EC47 /* dali.jpg in Resources */,
+				C33A56731E4E821200C3695D /* members.json in Resources */,
 				C3B6196B1E4D92E20039EC47 /* Assets.xcassets in Resources */,
 				C3B619661E4D92E20039EC47 /* Main.storyboard in Resources */,
 				C3B619851E4E3CF90039EC47 /* GoogleService-Info.plist in Resources */,
@@ -242,10 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B619691E4D92E20039EC47 /* DALIApp.xcdatamodeld in Sources */,
+				C3C4D6701E4EBC3700FEFD92 /* Member.swift in Sources */,
+				C3E23BDB1E4E47FB0079C80C /* MemberTableViewCell.swift in Sources */,
 				C3B6197A1E4D950D0039EC47 /* MembersTableViewController.swift in Sources */,
 				C3B619611E4D92E20039EC47 /* AppDelegate.swift in Sources */,
 				C3B619811E4E24EC0039EC47 /* MemberDescriptionViewController.swift in Sources */,
-				C3B619831E4E25390039EC47 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
