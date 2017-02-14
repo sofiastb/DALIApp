@@ -25,8 +25,6 @@ class MemberDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets title of view controller as the member's name
-        self.title = chosenMember?.name
         // Makes buttons' corners round
         urlButton.layer.cornerRadius = 10
         location.layer.cornerRadius = 10

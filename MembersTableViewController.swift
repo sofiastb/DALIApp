@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FontAwesome_swift
 
-class MembersTableViewController: UITableViewController {
+class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    @IBOutlet weak var mapButton: UIBarButtonItem!
     
     // MARK: Properties
     // An array of member objects that correspond to DALI's members
@@ -18,6 +21,10 @@ class MembersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 30)] as [String: Any]
+        mapButton.setTitleTextAttributes(attributes, for: .normal)
+        mapButton.title = String.fontAwesomeIcon(name: .globe)
         
         // Reference to Firebase Database
         let ref = FIRDatabase.database().reference().child("members")
@@ -34,6 +41,10 @@ class MembersTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         })
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,6 +91,38 @@ class MembersTableViewController: UITableViewController {
         cell.nameLabel.text = member.name
         
         return cell
+    }
+    
+    // Title for the empty table view.
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Loading..."
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    // If I want a description for the empty table view.
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "The list of DALI Members will load shortly!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    // If I want an image for the empty table view.
+//    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+//        return UIImage(named: "dali.jpg")
+//    }
+    
+    // If I want a button for the empty table view.
+//    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> NSAttributedString? {
+//        let str = "Add Grokkleglob"
+//        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout)]
+//        return NSAttributedString(string: str, attributes: attrs)
+//    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
+        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Hurray", style: .default))
+        present(ac, animated: true)
     }
     
 

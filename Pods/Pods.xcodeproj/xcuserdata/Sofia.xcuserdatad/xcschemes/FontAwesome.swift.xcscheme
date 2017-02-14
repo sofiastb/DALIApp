@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "395DF44E3FDFB9CC96C01784374B3D91"
-               BuildableName = "Pods_DALIApp.framework"
-               BlueprintName = "Pods-DALIApp"
+               BlueprintIdentifier = "C74D47B051BF84CA30E0723F127F42AD"
+               BuildableName = "FontAwesome_swift.framework"
+               BlueprintName = "FontAwesome.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "395DF44E3FDFB9CC96C01784374B3D91"
-            BuildableName = "Pods_DALIApp.framework"
-            BlueprintName = "Pods-DALIApp"
+            BlueprintIdentifier = "C74D47B051BF84CA30E0723F127F42AD"
+            BuildableName = "FontAwesome_swift.framework"
+            BlueprintName = "FontAwesome.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
