@@ -20,32 +20,49 @@ class MemberDescriptionViewController: UIViewController {
     @IBOutlet weak var location: UIButton!
     
     // Variable for the Member object passed from the table view
-    var chosenMember: Member?
+    var chosenMember: Member? {
+        didSet {
+            // Updates the view.
+            configureView()
+        }
+    }
+    
+    // The function that updates the view.
+    func configureView() {
+        // Update the user interface for the detail item.
+        if let chosenMember = self.chosenMember {
+            if let icon = icon, let name = name, let message = message, let projects = projects {
+                // Turns url string into useable link
+                let url = URL(string: chosenMember.iconUrl)
+            
+                // Implemented Task to guarantee that the icon urls wouldn't be nil.
+                let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+                    guard let data = data, error == nil else { return }
+                    DispatchQueue.main.async() {
+                        icon.image = UIImage(data: data)
+                    }
+                }
+            
+                task.resume()
+            
+                // Sets the various aspects of the DetailViewController
+                name.text = "Hi! I'm " + (chosenMember.name) + "."
+                message.text = chosenMember.message
+                projects.text = (chosenMember.project).joined(separator: ", ")
+            }
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Makes buttons' corners round
         urlButton.layer.cornerRadius = 10
         location.layer.cornerRadius = 10
         
-        // Turns url string into useable link
-        let url = URL(string: (chosenMember?.iconUrl)!)
-        
-        // Implemented Task to guarantee that the icon urls wouldn't be nil.
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                self.icon.image = UIImage(data: data)
-            }
-        }
-        
-        task.resume()
-        
-        // Sets the various aspects of the DetailViewController
-        self.name.text = "Hi! I'm " + (self.chosenMember?.name)! + "."
-        self.message.text = self.chosenMember?.message
-        self.projects.text = (self.chosenMember?.project)!.joined(separator: ", ")
+        // Loads thew view.
+        configureView()
         
     }
     

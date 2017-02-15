@@ -11,7 +11,7 @@ import CoreData
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -20,8 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         // Configures Firebase
         FIRApp.configure()
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        splitViewController.delegate = self
         
+        UISearchBar.appearance().barTintColor = UIColor.DALIBlue()
+        UISearchBar.appearance().tintColor = UIColor.white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.DALIBlue()
         return true
+    }
+    
+    // MARK: - Split view
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? MemberDescriptionViewController else { return false }
+        if topAsDetailController.chosenMember == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -94,5 +112,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+extension UIColor {
+    static func DALIBlue() -> UIColor {
+        return UIColor(red:0.18, green:0.65, blue:0.98, alpha:1.0)
+    }
+}
+
 
 

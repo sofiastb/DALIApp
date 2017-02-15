@@ -11,20 +11,36 @@ import Firebase
 import FirebaseDatabase
 import FontAwesome_swift
 
-class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var mapButton: UIBarButtonItem!
     
     // MARK: Properties
     // An array of member objects that correspond to DALI's members
     var members: [Member] = []
-
+    var filteredMembers: [Member] = []
+    // A variable for the Description View Controller
+    var memberDescriptionViewController: MemberDescriptionViewController? = nil
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 30)] as [String: Any]
+        // Sets the globe map button in the table view.
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 25)] as [String: Any]
         mapButton.setTitleTextAttributes(attributes, for: .normal)
         mapButton.title = String.fontAwesomeIcon(name: .globe)
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        // Setup the Scope Bar
+        searchController.searchBar.scopeButtonTitles = ["All", "Past", "Core", "Staff", "None"]
+        tableView.tableHeaderView = searchController.searchBar
         
         // Reference to Firebase Database
         let ref = FIRDatabase.database().reference().child("members")
@@ -42,9 +58,22 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
             }
         })
         
+        // Delegates for the empty table view.
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
+        
+        // Sets up the split view controller
+        if let splitViewController = splitViewController {
+            let controllers = splitViewController.viewControllers
+            memberDescriptionViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? MemberDescriptionViewController
+        }
+    }
+    
+    // Function to control the appearance of the split view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +84,9 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredMembers.count
+        }
         return 1
     }
 
@@ -74,25 +106,73 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
             fatalError("The dequeued cell is not of type MemberTableViewCell")
         }
         
-        // Gets icon url and name from the members database
-        let member = members[indexPath.row]
-        let url = URL(string: member.iconUrl)
+        // Determines which array to look in.
+        let member: Member?
+        if searchController.isActive && searchController.searchBar.text != "" {
+            member = filteredMembers[indexPath.row]
+        } else {
+            member = members[indexPath.row]
+        }
+        
+        let url = URL(string: (member?.iconUrl)!)
         
         // Implemented Task to guarantee that the icon urls wouldn't be nil.
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard let data = data, error == nil else { return }
             DispatchQueue.main.async() {
                 cell.icon.image = UIImage(data: data)
-            } 
+            }
         }
         
         task.resume()
         
-        cell.nameLabel.text = member.name
+        cell.nameLabel.text = member?.name
         
         return cell
     }
     
+    // Filters content based on scope.
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredMembers = members.filter({( member : Member) -> Bool in
+            let categoryMatch = (scope == "All")
+            return categoryMatch && member.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
+    
+    // Defines the scopes for the search.
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let searchProject: String
+        
+        if selectedScope == 0 {
+            filteredMembers = members
+        } else if selectedScope == 1 {
+            searchProject = "None"
+            filteredMembers = members.filter { $0.project.contains(searchProject) }
+        } else if selectedScope == 2 {
+            searchProject = "Core"
+            filteredMembers = members.filter { $0.project.contains(searchProject) }
+        } else if selectedScope == 3 {
+            searchProject = "Staff"
+            filteredMembers = members.filter { $0.project.contains(searchProject) }
+        } else {
+            searchProject = "Project"
+            filteredMembers = members.filter { $0.project.contains("Staff") == false && $0.project.contains("Staff") == false && $0.project.contains("None") == false}
+        }
+        
+        tableView.reloadData()
+    }
+    
+    // Filters the results of the query
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+
+    
+    // MARK: Empty table view
     // Title for the empty table view.
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "Loading..."
@@ -119,11 +199,13 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
 //        return NSAttributedString(string: str, attributes: attrs)
 //    }
     
-    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
-        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Hurray", style: .default))
-        present(ac, animated: true)
-    }
+    // If I want a button message for the empty table view.
+    
+//    func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
+//        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .alert)
+//        ac.addAction(UIAlertAction(title: "Hurray", style: .default))
+//        present(ac, animated: true)
+//    }
     
 
     /*
@@ -163,16 +245,20 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
 
     
     // MARK: - Navigation
-    // Takes the member item 
+    // Takes the member item and moves it via the segue to the MemberDescriptionViewController. 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MemberDetails" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                var member = members[indexPath.row]
-                let controller = segue.destination as? MemberDescriptionViewController
-                controller?.chosenMember = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
+                print(tableView.indexPathForSelectedRow!)
+                let member = members[indexPath.row]
+                print(members[indexPath.row])
+                let controller = (segue.destination as! UINavigationController).topViewController as! MemberDescriptionViewController
+                controller.chosenMember = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
+                
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
-
     }
-    
 }
+
