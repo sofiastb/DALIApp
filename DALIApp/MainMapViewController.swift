@@ -36,6 +36,7 @@ class MainMapViewController: UIViewController {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(member.lat_long[0]), longitude: CLLocationDegrees(member.lat_long[1]))
             marker.title = member.name
+            marker.snippet = (member.project).joined(separator: ", ")
             marker.map = mapView
         }
     }

@@ -20,8 +20,6 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = memberMap.name + "'s Location"
-
-        // Do any additional setup after loading the view.
     }
     
     override func loadView() {
@@ -36,6 +34,7 @@ class MapViewController: UIViewController {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(memberMap.lat_long[0]), longitude: CLLocationDegrees(memberMap.lat_long[1]))
         marker.title = memberMap.name
+        marker.snippet = (memberMap.project).joined(separator: ", ")
         marker.map = mapView
         
     }
