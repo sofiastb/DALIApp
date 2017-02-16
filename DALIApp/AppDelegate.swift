@@ -20,11 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
         // Configures Firebase
         FIRApp.configure()
+        
+        // Sets navigation tint color
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.white
+        
+        // Sets up split view controller
         let splitViewController = window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         
+        // Search bar appearance
         UISearchBar.appearance().barTintColor = UIColor.DALIBlue()
         UISearchBar.appearance().tintColor = UIColor.white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.DALIBlue()
@@ -36,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard let topAsDetailController = secondaryAsNavController.topViewController as? MemberDescriptionViewController else { return false }
         if topAsDetailController.chosenMember == nil {
-            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            // Discards secondary view controller
             return true
         }
         return false
@@ -113,6 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 }
 
+// DALI Blue Color
 extension UIColor {
     static func DALIBlue() -> UIColor {
         return UIColor(red:0.18, green:0.65, blue:0.98, alpha:1.0)

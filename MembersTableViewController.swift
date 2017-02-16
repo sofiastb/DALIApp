@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FontAwesome_swift
 
-class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     @IBOutlet weak var mapButton: UIBarButtonItem!
     
@@ -39,7 +39,7 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
         searchController.dimsBackgroundDuringPresentation = false
         
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All", "Past", "Core", "Staff", "None"]
+        searchController.searchBar.scopeButtonTitles = ["Name", "Projects"]
         tableView.tableHeaderView = searchController.searchBar
         
         // Reference to Firebase Database
@@ -84,14 +84,14 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredMembers.count
-        }
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredMembers.count
+        }
         return members.count
     }
 
@@ -110,8 +110,14 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
         let member: Member?
         if searchController.isActive && searchController.searchBar.text != "" {
             member = filteredMembers[indexPath.row]
+            for member in filteredMembers {
+                print(member.name)
+            }
         } else {
             member = members[indexPath.row]
+            for member in filteredMembers {
+                print(member.name)
+            }
         }
         
         let url = URL(string: (member?.iconUrl)!)
@@ -131,36 +137,24 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
         return cell
     }
     
+    // MARK: Scope Search
     // Filters content based on scope.
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredMembers = members.filter({( member : Member) -> Bool in
-            let categoryMatch = (scope == "All")
-            return categoryMatch && member.name.lowercased().contains(searchText.lowercased())
+            // If the user chooses the name tab, they can search for users by name.
+            if scope == "Name" {
+                return member.name.lowercased().contains(searchText.lowercased())
+            // If the user chooses the project tab, they can search for a member based on project i.e. "Core", "Staff", "Past" (for members with no projects), "NeuroViz" etc.
+            } else {
+                return member.project.first!.lowercased().contains(searchText.lowercased())
+            }
         })
-        
         tableView.reloadData()
     }
     
     // Defines the scopes for the search.
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let searchProject: String
-        
-        if selectedScope == 0 {
-            filteredMembers = members
-        } else if selectedScope == 1 {
-            searchProject = "None"
-            filteredMembers = members.filter { $0.project.contains(searchProject) }
-        } else if selectedScope == 2 {
-            searchProject = "Core"
-            filteredMembers = members.filter { $0.project.contains(searchProject) }
-        } else if selectedScope == 3 {
-            searchProject = "Staff"
-            filteredMembers = members.filter { $0.project.contains(searchProject) }
-        } else {
-            searchProject = "Project"
-            filteredMembers = members.filter { $0.project.contains("Staff") == false && $0.project.contains("Staff") == false && $0.project.contains("None") == false}
-        }
-        
+        filteredMembers = members
         tableView.reloadData()
     }
     
@@ -249,16 +243,32 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MemberDetails" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                print(tableView.indexPathForSelectedRow!)
-                let member = members[indexPath.row]
-                print(members[indexPath.row])
-                let controller = (segue.destination as! UINavigationController).topViewController as! MemberDescriptionViewController
+                let member: Member
+                if searchController.isActive && searchController.searchBar.text != "" {
+                    member = filteredMembers[indexPath.row]
+                } else {
+                    member = members[indexPath.row]
+                }
+                    let controller = (segue.destination as! UINavigationController).topViewController as! MemberDescriptionViewController
                 controller.chosenMember = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
                 
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+}
+
+// MARK: Search extensions.
+extension MembersTableViewController: UISearchBarDelegate {
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+
+extension MembersTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
