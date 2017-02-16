@@ -5,7 +5,8 @@
 //  their name or to search by DALI project to see the members that are involved
 //  in it. This table view also features a link to a Google Maps view controller
 //  where all of the locations of the DALI Lab members are displayed by pins on 
-//  the map that contain their name. 
+//  the map that contain their name. FontAwesome was used for the globe icon and
+//  the DZNEmptyTableView Package was used for the custom empty table view.
 //  DALIApp
 //
 //  Created by Sofia Stanescu-Bellu on 2/10/17.
