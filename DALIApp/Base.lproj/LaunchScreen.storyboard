@@ -21,25 +21,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dali.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yS5-Oc-fWO">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DALILaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="yS5-Oc-fWO">
+                                <rect key="frame" x="0.0" y="242" width="375" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="F9Y-3c-g15"/>
+                                    <constraint firstAttribute="width" constant="375" id="zcF-DQ-66R"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yS5-Oc-fWO" secondAttribute="trailing" id="Ckd-A5-3OX"/>
-                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Pkh-wM-qjn"/>
-                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="126" id="euB-58-Uo9"/>
-                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ieJ-iM-Nm7"/>
+                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="222" id="VGV-h4-eLG"/>
+                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="d8k-T6-2MU"/>
+                            <constraint firstAttribute="trailing" secondItem="yS5-Oc-fWO" secondAttribute="trailing" id="yNU-QM-xNc"/>
+                            <constraint firstItem="yS5-Oc-fWO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zwc-Qx-F47"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="dali.jpg" width="512" height="512"/>
+        <image name="DALILaunchScreen" width="242" height="102"/>
     </resources>
 </document>

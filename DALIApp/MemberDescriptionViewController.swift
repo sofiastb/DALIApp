@@ -74,12 +74,12 @@ class MemberDescriptionViewController: UIViewController {
         
     }
     
-    // Makes profile images round
-    override func viewDidLayoutSubviews() {
-        icon.layer.cornerRadius = icon.frame.size.width/2
-        icon.clipsToBounds = true
-        
-    }
+    // Makes profile images round (Optional)
+//    override func viewDidLayoutSubviews() {
+//        icon.layer.cornerRadius = icon.frame.size.width/2
+//        icon.clipsToBounds = true
+//        
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

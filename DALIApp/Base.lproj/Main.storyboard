@@ -9,6 +9,20 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Italic.ttf">
+            <string>Montserrat-Italic</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Members-->
         <scene sceneID="ZKL-Bf-1zQ">
@@ -34,8 +48,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-ES-KKL">
-                                            <rect key="frame" x="124" y="46" width="243" height="27"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                            <rect key="frame" x="124" y="42" width="243" height="35"/>
+                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -44,7 +58,7 @@
                                         <constraint firstItem="yyw-ES-KKL" firstAttribute="trailing" secondItem="Q9v-vz-rEx" secondAttribute="trailingMargin" id="4P6-FU-taQ"/>
                                         <constraint firstItem="GmT-2a-6BD" firstAttribute="centerY" secondItem="Q9v-vz-rEx" secondAttribute="centerY" id="P7s-lB-RCd"/>
                                         <constraint firstItem="GmT-2a-6BD" firstAttribute="leading" secondItem="Q9v-vz-rEx" secondAttribute="leadingMargin" constant="8" id="TyR-nb-UlO"/>
-                                        <constraint firstItem="yyw-ES-KKL" firstAttribute="top" secondItem="Q9v-vz-rEx" secondAttribute="topMargin" constant="38" id="jvb-YY-gnq"/>
+                                        <constraint firstItem="yyw-ES-KKL" firstAttribute="top" secondItem="Q9v-vz-rEx" secondAttribute="topMargin" constant="34" id="jvb-YY-gnq"/>
                                         <constraint firstItem="yyw-ES-KKL" firstAttribute="centerY" secondItem="GmT-2a-6BD" secondAttribute="centerY" id="nKs-yS-jQ2"/>
                                         <constraint firstItem="yyw-ES-KKL" firstAttribute="leading" secondItem="GmT-2a-6BD" secondAttribute="trailing" constant="8" symbolic="YES" id="q6k-hm-ZPC"/>
                                     </constraints>
@@ -74,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oa-kS-TzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="-457"/>
+            <point key="canvasLocation" x="1543.2" y="-457.42128935532236"/>
         </scene>
         <!--Main Map View Controller-->
         <scene sceneID="Esf-sq-iFd">
@@ -103,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.59082579349999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ExpressiveInks" family="Expressive Inks" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -141,8 +155,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! I'm Name." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnv-V6-xPI">
-                                <rect key="frame" x="16" y="364" width="343" height="40"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="29"/>
+                                <rect key="frame" x="16" y="372" width="343" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -154,14 +168,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Projects: X, Y." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amc-PR-WBi">
-                                <rect key="frame" x="16" y="408" width="343" height="24"/>
-                                <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
+                                <rect key="frame" x="16" y="411.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Italic" family="Montserrat" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krj-sd-mDI">
-                                <rect key="frame" x="16" y="436" width="343" height="24"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <rect key="frame" x="16" y="444.5" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -171,6 +185,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5xV-Lw-lQb"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <state key="normal" title="More about me!"/>
                                 <connections>
                                     <action selector="loadWebsite:" destination="6qJ-zb-MeT" eventType="touchUpInside" id="4B4-FV-WAC"/>
@@ -182,6 +197,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vxk-Pz-Lod"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <state key="normal" title="Where am I?"/>
                                 <connections>
                                     <segue destination="GUa-5j-cO8" kind="showDetail" identifier="ShowMap" id="59L-AU-1fo"/>
@@ -194,12 +210,12 @@
                             <constraint firstItem="Tnv-V6-xPI" firstAttribute="leading" secondItem="9h4-wB-UNV" secondAttribute="leadingMargin" id="ATS-I5-dXd"/>
                             <constraint firstItem="D7V-Yd-CBQ" firstAttribute="leading" secondItem="XjY-O1-Kfp" secondAttribute="leading" id="BLB-pb-y9x"/>
                             <constraint firstItem="HWi-LW-8yx" firstAttribute="top" secondItem="yrw-Rc-aBp" secondAttribute="bottom" constant="60" id="LGO-op-7iR"/>
-                            <constraint firstItem="krj-sd-mDI" firstAttribute="top" secondItem="amc-PR-WBi" secondAttribute="bottom" constant="4" id="P4K-hY-Ptc"/>
+                            <constraint firstItem="krj-sd-mDI" firstAttribute="top" secondItem="amc-PR-WBi" secondAttribute="bottom" constant="12" id="P4K-hY-Ptc"/>
                             <constraint firstItem="H7R-Fh-n7n" firstAttribute="top" secondItem="XjY-O1-Kfp" secondAttribute="bottom" constant="50" id="V5G-3t-XaU"/>
                             <constraint firstItem="D7V-Yd-CBQ" firstAttribute="trailing" secondItem="XjY-O1-Kfp" secondAttribute="trailing" id="W7b-GD-ocs"/>
                             <constraint firstItem="amc-PR-WBi" firstAttribute="top" secondItem="Tnv-V6-xPI" secondAttribute="bottom" constant="4" id="eHo-xS-2Ch"/>
                             <constraint firstItem="HWi-LW-8yx" firstAttribute="centerX" secondItem="Tnv-V6-xPI" secondAttribute="centerX" id="klC-xn-d3p"/>
-                            <constraint firstItem="D7V-Yd-CBQ" firstAttribute="top" secondItem="krj-sd-mDI" secondAttribute="bottom" constant="69" id="mb0-Ph-CSn"/>
+                            <constraint firstItem="D7V-Yd-CBQ" firstAttribute="top" secondItem="krj-sd-mDI" secondAttribute="bottom" constant="61" id="mb0-Ph-CSn"/>
                             <constraint firstItem="Tnv-V6-xPI" firstAttribute="trailing" secondItem="9h4-wB-UNV" secondAttribute="trailingMargin" id="pZ5-30-XZw"/>
                             <constraint firstItem="amc-PR-WBi" firstAttribute="leading" secondItem="krj-sd-mDI" secondAttribute="leading" id="ra5-kD-vmO"/>
                             <constraint firstItem="Tnv-V6-xPI" firstAttribute="leading" secondItem="amc-PR-WBi" secondAttribute="leading" id="sH7-Jz-Zwr"/>
