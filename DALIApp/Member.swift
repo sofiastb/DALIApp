@@ -1,5 +1,9 @@
 //
 //  Member.swift
+//  Defines the Member object. Each DALI Member has a name, message, url to their
+//  icon picture, array with latitude and longitude coordinates, and an array 
+//  with names of the projects they're involved in. All of the Member data is 
+//  stored in a Firebase database. 
 //  DALIApp
 //
 //  Created by Sofia Stanescu-Bellu on 2/10/17.

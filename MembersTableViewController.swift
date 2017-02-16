@@ -1,5 +1,11 @@
 //
 //  MembersTableViewController.swift
+//  The MembersTableViewController displays a list of the members in the Members
+//  Firebase database. The user can use a scope search to search the members by
+//  their name or to search by DALI project to see the members that are involved
+//  in it. This table view also features a link to a Google Maps view controller
+//  where all of the locations of the DALI Lab members are displayed by pins on 
+//  the map that contain their name. 
 //  DALIApp
 //
 //  Created by Sofia Stanescu-Bellu on 2/10/17.
@@ -110,14 +116,8 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
         let member: Member?
         if searchController.isActive && searchController.searchBar.text != "" {
             member = filteredMembers[indexPath.row]
-            for member in filteredMembers {
-                print(member.name)
-            }
         } else {
             member = members[indexPath.row]
-            for member in filteredMembers {
-                print(member.name)
-            }
         }
         
         let url = URL(string: (member?.iconUrl)!)
@@ -141,11 +141,11 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
     // Filters content based on scope.
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredMembers = members.filter({( member : Member) -> Bool in
-            // If the user chooses the name tab, they can search for users by name.
             if scope == "Name" {
+                // If the user chooses the name tab, they can search for users by name.
                 return member.name.lowercased().contains(searchText.lowercased())
-            // If the user chooses the project tab, they can search for a member based on project i.e. "Core", "Staff", "Past" (for members with no projects), "NeuroViz" etc.
             } else {
+                // If the user chooses the projects tab, they can search for a member based on project i.e. "Core", "Staff", "None" (for members with no projects), "NeuroViz" etc.
                 return member.project.first!.lowercased().contains(searchText.lowercased())
             }
         })
@@ -255,6 +255,10 @@ class MembersTableViewController: UITableViewController, DZNEmptyDataSetSource, 
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        } else if segue.identifier == "ShowMain" {
+            let sendMembers = members
+            let controller = segue.destination as! MainMapViewController
+            controller.membersMap = sendMembers
         }
     }
 }

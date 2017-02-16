@@ -1,5 +1,9 @@
 //
 //  MemberTableViewCell.swift
+//  Sets up the custom table view cell in MembersTableViewController.
+//  Features a name label that will be filled with the member's name 
+//  and an image UIImageView that will be filled with the member's icon
+//  url image.
 //  DALIApp
 //
 //  Created by Sofia Stanescu-Bellu on 2/10/17.

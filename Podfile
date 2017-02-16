@@ -10,5 +10,6 @@ target 'DALIApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'FontAwesome.swift'
+  pod 'GoogleMaps'
 
 end

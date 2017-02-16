@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
         // Configures Firebase
         FIRApp.configure()
+        
+        // API Key for Google Maps
+        GMSServices.provideAPIKey("AIzaSyD9GhI_aggBokjQfldWCU5_HudqpRtoIhA")
         
         // Sets navigation tint color
         let navigationBarAppearace = UINavigationBar.appearance()

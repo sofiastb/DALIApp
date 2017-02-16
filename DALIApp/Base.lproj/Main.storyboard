@@ -62,7 +62,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Members" id="l9j-ON-neg">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5FD-mq-s1I"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="5FD-mq-s1I">
+                            <connections>
+                                <segue destination="6Pr-tb-6zL" kind="showDetail" identifier="ShowMain" id="FfK-8l-wCJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapButton" destination="5FD-mq-s1I" id="KnA-7v-crX"/>
@@ -71,6 +75,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oa-kS-TzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1544" y="-457"/>
+        </scene>
+        <!--Main Map View Controller-->
+        <scene sceneID="Esf-sq-iFd">
+            <objects>
+                <viewController id="6Pr-tb-6zL" customClass="MainMapViewController" customModule="DALIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qrH-iW-C2N"/>
+                        <viewControllerLayoutGuide type="bottom" id="bum-pQ-NvE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCF-3L-J1M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xMh-Dj-H11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2348" y="-457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8fe-gC-uVy">
@@ -81,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.59082579349999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ExpressiveInks" family="Expressive Inks" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="ExpressiveInks" family="Expressive Inks" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -161,6 +183,9 @@
                                     <constraint firstAttribute="height" constant="40" id="vxk-Pz-Lod"/>
                                 </constraints>
                                 <state key="normal" title="Where am I?"/>
+                                <connections>
+                                    <segue destination="GUa-5j-cO8" kind="showDetail" identifier="ShowMap" id="59L-AU-1fo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,6 +222,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJR-kI-j9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1543" y="387"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="oxq-7N-v4l">
+            <objects>
+                <viewController id="GUa-5j-cO8" customClass="MapViewController" customModule="DALIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IR3-WE-YGg"/>
+                        <viewControllerLayoutGuide type="bottom" id="D4N-CD-MfW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XZk-yP-2wJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8o-AN-p1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2348" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V3F-aJ-ge9">

@@ -1,5 +1,10 @@
 //
 //  MemberDescriptionViewController.swift
+//  The MemberDescriptionViewController features each member's icon,
+//  the project(s) they are woking on, a short message, a button that
+//  redirects to their website/more info pdf, and a button that redirects
+//  to a Google Maps view where the member's chosen location is displayed by
+//  a marker with their name on it.
 //  DALIApp
 //
 //  Created by Sofia Stanescu-Bellu on 2/10/17.
@@ -56,6 +61,9 @@ class MemberDescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Sets title of view controller
+        self.title = chosenMember?.name
 
         // Makes buttons' corners round
         urlButton.layer.cornerRadius = 10
@@ -90,14 +98,14 @@ class MemberDescriptionViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Takes the member item and moves it via the segue to the MemberDescriptionViewController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowMap" {
+            let member = chosenMember!
+            let controller = segue.destination as! MapViewController
+            controller.memberMap = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
+        }
     }
-    */
-
 }
