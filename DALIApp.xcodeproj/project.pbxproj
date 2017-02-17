@@ -14,7 +14,6 @@
 		C3B619691E4D92E20039EC47 /* DALIApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3B619671E4D92E20039EC47 /* DALIApp.xcdatamodeld */; };
 		C3B6196B1E4D92E20039EC47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B6196A1E4D92E20039EC47 /* Assets.xcassets */; };
 		C3B6196E1E4D92E20039EC47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3B6196C1E4D92E20039EC47 /* LaunchScreen.storyboard */; };
-		C3B619761E4D93100039EC47 /* dali.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3B619751E4D93100039EC47 /* dali.jpg */; };
 		C3B6197A1E4D950D0039EC47 /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */; };
 		C3B619811E4E24EC0039EC47 /* MemberDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */; };
 		C3B619851E4E3CF90039EC47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */; };
@@ -65,7 +64,6 @@
 		C3B6196A1E4D92E20039EC47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3B6196D1E4D92E20039EC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3B6196F1E4D92E20039EC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3B619751E4D93100039EC47 /* dali.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dali.jpg; sourceTree = "<group>"; };
 		C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MembersTableViewController.swift; path = ../MembersTableViewController.swift; sourceTree = "<group>"; };
 		C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberDescriptionViewController.swift; sourceTree = "<group>"; };
 		C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,6 +131,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C3AA142F1E56BF5A00A112F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3C4D66F1E4EBC3700FEFD92 /* Member.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C3AA14301E56BF7000A112F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3AA14321E56BF9500A112F1 /* MemberControllers */,
+				C3AA14311E56BF8900A112F1 /* MapControllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C3AA14311E56BF8900A112F1 /* MapControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3B6CED51E554EAA00B7230F /* MapViewController.swift */,
+				C3B6CED71E55532400B7230F /* MainMapViewController.swift */,
+			);
+			name = MapControllers;
+			sourceTree = "<group>";
+		};
+		C3AA14321E56BF9500A112F1 /* MemberControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */,
+				C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */,
+				C3E23BDA1E4E47FB0079C80C /* MemberTableViewCell.swift */,
+			);
+			name = MemberControllers;
+			sourceTree = "<group>";
+		};
+		C3AA14331E56BFB000A112F1 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				C3B619641E4D92E20039EC47 /* Main.storyboard */,
+				C3B6196C1E4D92E20039EC47 /* LaunchScreen.storyboard */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		C3AA14341E56BFCF00A112F1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C3B619601E4D92E20039EC47 /* AppDelegate.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		C3AA14351E56BFD700A112F1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C3B6197B1E4D99390039EC47 /* Fonts */,
+				C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */,
+				C3B6196F1E4D92E20039EC47 /* Info.plist */,
+				C3B619671E4D92E20039EC47 /* DALIApp.xcdatamodeld */,
+				C32A5E081E51197E00410DF7 /* UIScrollView+EmptyDataSet.h */,
+				C32A5E071E51197D00410DF7 /* DALIApp-Bridging-Header.h */,
+				C32A5E091E51197E00410DF7 /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		C3B619541E4D92E20039EC47 = {
 			isa = PBXGroup;
 			children = (
@@ -154,24 +219,12 @@
 		C3B6195F1E4D92E20039EC47 /* DALIApp */ = {
 			isa = PBXGroup;
 			children = (
-				C3B6197B1E4D99390039EC47 /* Fonts */,
-				C3B619791E4D950D0039EC47 /* MembersTableViewController.swift */,
-				C3C4D66F1E4EBC3700FEFD92 /* Member.swift */,
-				C3B619801E4E24EC0039EC47 /* MemberDescriptionViewController.swift */,
-				C3E23BDA1E4E47FB0079C80C /* MemberTableViewCell.swift */,
-				C3B6CED51E554EAA00B7230F /* MapViewController.swift */,
-				C3B6CED71E55532400B7230F /* MainMapViewController.swift */,
-				C3B619601E4D92E20039EC47 /* AppDelegate.swift */,
+				C3AA142F1E56BF5A00A112F1 /* Models */,
+				C3AA14301E56BF7000A112F1 /* Controllers */,
+				C3AA14331E56BFB000A112F1 /* Layout */,
+				C3AA14341E56BFCF00A112F1 /* Other */,
+				C3AA14351E56BFD700A112F1 /* SupportingFiles */,
 				C3B6196A1E4D92E20039EC47 /* Assets.xcassets */,
-				C3B619641E4D92E20039EC47 /* Main.storyboard */,
-				C3B6196C1E4D92E20039EC47 /* LaunchScreen.storyboard */,
-				C3B619751E4D93100039EC47 /* dali.jpg */,
-				C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */,
-				C3B6196F1E4D92E20039EC47 /* Info.plist */,
-				C3B619671E4D92E20039EC47 /* DALIApp.xcdatamodeld */,
-				C32A5E081E51197E00410DF7 /* UIScrollView+EmptyDataSet.h */,
-				C32A5E071E51197D00410DF7 /* DALIApp-Bridging-Header.h */,
-				C32A5E091E51197E00410DF7 /* UIScrollView+EmptyDataSet.m */,
 			);
 			path = DALIApp;
 			sourceTree = "<group>";
@@ -310,7 +363,6 @@
 				C3B6CF131E5622FB00B7230F /* Montserrat-BlackItalic.ttf in Resources */,
 				C3B6CF331E56231300B7230F /* OpenSans-Italic.ttf in Resources */,
 				C3B6CF351E56231300B7230F /* OpenSans-LightItalic.ttf in Resources */,
-				C3B619761E4D93100039EC47 /* dali.jpg in Resources */,
 				C3B6196B1E4D92E20039EC47 /* Assets.xcassets in Resources */,
 				C3B6CF161E5622FB00B7230F /* Montserrat-ExtraBold.ttf in Resources */,
 				C3B6CF141E5622FB00B7230F /* Montserrat-Bold.ttf in Resources */,
