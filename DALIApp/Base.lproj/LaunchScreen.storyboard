@@ -25,6 +25,8 @@
                                 <rect key="frame" x="0.0" y="242" width="375" height="183"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="183" id="F9Y-3c-g15"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="Zsd-sr-K6D"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="183" id="q1H-m8-g1I"/>
                                     <constraint firstAttribute="width" constant="375" id="zcF-DQ-66R"/>
                                 </constraints>
                             </imageView>

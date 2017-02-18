@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMh-Dj-H11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="-457"/>
+            <point key="canvasLocation" x="2457" y="-457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8fe-gC-uVy">
@@ -225,7 +225,17 @@
                             <constraint firstItem="XjY-O1-Kfp" firstAttribute="top" secondItem="D7V-Yd-CBQ" secondAttribute="bottom" constant="8" symbolic="YES" id="y8C-7p-IZG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SXW-ib-9Cf"/>
+                    <navigationItem key="navigationItem" id="SXW-ib-9Cf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="S16-gu-cZh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZU-Br-xZ7">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="icon" destination="HWi-LW-8yx" id="4hI-of-KdH"/>
                         <outlet property="location" destination="XjY-O1-Kfp" id="a0b-J2-8bW"/>
@@ -237,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJR-kI-j9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="387"/>
+            <point key="canvasLocation" x="1543" y="386"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="oxq-7N-v4l">
@@ -255,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8o-AN-p1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="387"/>
+            <point key="canvasLocation" x="2458" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V3F-aJ-ge9">
@@ -278,7 +288,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fuZ-iy-opA"/>
+        <segue reference="yem-XR-dgP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

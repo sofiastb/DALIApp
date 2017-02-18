@@ -62,9 +62,15 @@ class MemberDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets title of view controller
-        self.title = chosenMember?.name
-
+        // Sets title of MembersDescriptionViewController as the DALI logo
+        let dali = UIImage(named: "dali@3x.png")
+        let imageView = UIImageView(image:dali)
+        var daliWidth = navigationController?.navigationBar.frame.size.width
+        var daliHeight = navigationController?.navigationBar.frame.size.height
+        imageView.frame = CGRect(x: 0, y: 0, width: daliWidth!, height: daliHeight!)
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
         // Makes buttons' corners round
         urlButton.layer.cornerRadius = 10
         location.layer.cornerRadius = 10
@@ -108,4 +114,12 @@ class MemberDescriptionViewController: UIViewController {
             controller.memberMap = Member(name: member.name, message: member.message, iconUrl: member.iconUrl, url: member.url, lat_long: member.lat_long, project: member.project)
         }
     }
+}
+
+// GRRect Extension to size the DALI logo in the navbar header.
+extension CGRect{
+    init(_ x:CGFloat,_ y:CGFloat,_ width:CGFloat,_ height:CGFloat) {
+        self.init(x:x,y:y,width:width,height:height)
+    }
+    
 }
