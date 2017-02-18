@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A666220D9D97D1B9624D3E54 /* Pods_DALIApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE01C2262AC73BF43BB4C661 /* Pods_DALIApp.framework */; };
-		C32230161E57F04700D3F556 /* dali@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C32230151E57F04700D3F556 /* dali@3x.png */; };
 		C32A5E0A1E51197E00410DF7 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C32A5E091E51197E00410DF7 /* UIScrollView+EmptyDataSet.m */; };
 		C3B619611E4D92E20039EC47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B619601E4D92E20039EC47 /* AppDelegate.swift */; };
 		C3B619661E4D92E20039EC47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3B619641E4D92E20039EC47 /* Main.storyboard */; };
@@ -55,7 +54,6 @@
 /* Begin PBXFileReference section */
 		1622FA02DC78D0A69C588444 /* Pods-DALIApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DALIApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DALIApp/Pods-DALIApp.release.xcconfig"; sourceTree = "<group>"; };
 		1A7CA7F77D145852F198B263 /* Pods-DALIApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DALIApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DALIApp/Pods-DALIApp.debug.xcconfig"; sourceTree = "<group>"; };
-		C32230151E57F04700D3F556 /* dali@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dali@3x.png"; path = "../../../Desktop/dali@3x.png"; sourceTree = "<group>"; };
 		C32A5E071E51197D00410DF7 /* DALIApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DALIApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		C32A5E081E51197E00410DF7 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		C32A5E091E51197E00410DF7 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 		C3AA14351E56BFD700A112F1 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				C32230151E57F04700D3F556 /* dali@3x.png */,
 				C3B6197B1E4D99390039EC47 /* Fonts */,
 				C3B619841E4E3CF90039EC47 /* GoogleService-Info.plist */,
 				C3B6196F1E4D92E20039EC47 /* Info.plist */,
@@ -352,7 +349,6 @@
 				C3B6CF211E5622FB00B7230F /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				C3B6CF321E56231300B7230F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				C3B6CF1C1E5622FB00B7230F /* Montserrat-LightItalic.ttf in Resources */,
-				C32230161E57F04700D3F556 /* dali@3x.png in Resources */,
 				C3B6CF2F1E56231300B7230F /* OpenSans-Bold.ttf in Resources */,
 				C3B6CF1B1E5622FB00B7230F /* Montserrat-Light.ttf in Resources */,
 				C3B6CF151E5622FB00B7230F /* Montserrat-BoldItalic.ttf in Resources */,

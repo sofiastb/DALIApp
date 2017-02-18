@@ -63,7 +63,7 @@ class MemberDescriptionViewController: UIViewController {
         super.viewDidLoad()
         
         // Sets title of MembersDescriptionViewController as the DALI logo
-        let dali = UIImage(named: "dali@3x.png")
+        let dali = #imageLiteral(resourceName: "dali_transparent")
         let imageView = UIImageView(image:dali)
         var daliWidth = navigationController?.navigationBar.frame.size.width
         var daliHeight = navigationController?.navigationBar.frame.size.height
