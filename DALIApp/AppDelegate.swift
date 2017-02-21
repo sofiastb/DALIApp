@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         FIRApp.configure()
         
         // API Key for Google Maps
-        GMSServices.provideAPIKey("AIzaSyD9GhI_aggBokjQfldWCU5_HudqpRtoIhA")
+        GMSServices.provideAPIKey("AIzaSyD6YPioWmNB7p09o1cfNrnlSoXks8qS2Gk")
         
         // Sets navigation tint color
         let navigationBarAppearace = UINavigationBar.appearance()
